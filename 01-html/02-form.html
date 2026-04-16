@@ -5,10 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 02 - Form</title>
+    <style>
+      fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <!-- Add your code here -->
+      <h1>Roth IRA Calculator</h1>
+      <form action="/submitform">
+        <div>
+          <label for="balance">Balance ($)</label>
+          <input type="text" name="balance" id="balance" />
+        </div>
+        <br />
+        <div>
+          <label for="annual">Annual Contribution ($)</label> <br />
+          <input type="text" name="annual" id="annual" />
+        </div>
+        <br />
+        <fieldset>
+          <legend>Maximize contributions?</legend>
+          <input type="radio" name="maximize" id="yes" value="yes" />
+          <label for="yes">Yes</label>
+          <input type="radio" name="maximize" id="no" value="no" />
+          <label for="no">no</label>
+        </fieldset>
+        <br />
+        <div>
+          <label for="rate">Expected rate of return (%)</label><br />
+          <input type="number" name="rate" id="rate" />
+        </div>
+        <br />
+        <div>
+          <label for="current">Current Age</label><br />
+          <input type="number" name="current" id="current" />
+        </div>
+        <br />
+        <div>
+          <label for="retire">Retirement Age</label><br />
+          <input type="number" name="retire" id="retire" />
+        </div>
+        <br />
+        <div>
+          <label for="tax">Marginal tax rate (%)</label><br />
+          <input type="number" name="tax" id="tax" />
+        </div>
+        <br />
+        <div>
+          <input type="submit" value="Calculate" />
+          <input type="reset" value="Reset" />
+        </div>
+      </form>
+      <p>
+        This exercise is a simplified version of the Roth IRA Calculator at
+        <a href="https://www.calculator.net">Calculator.net</a>
+      </p>
     </main>
   </body>
 </html>
