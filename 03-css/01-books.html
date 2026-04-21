@@ -6,21 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CSS Exercise 01 - Books</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-        <header>
-      <nav>
-        <ul>
-          <li><a href="#books">ASOIAF Books</a></li>
-          <li><a href="#covers">First Edition Covers</a></li>
-          <li><a href="#table">Table of POV Characters</a></li>
+    <header>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#books">ASOIAF Books</a></li>
+          <li><a class="nav-link" href="#covers">First Edition Covers</a></li>
+          <li><a class="nav-link" href="#table">Table of POV Characters</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <h1>A Song of Ice and Fire - George R.R. Martin</h1>
+      <h1 class="header-font primary-header">
+        A Song of Ice and Fire - George R.R. Martin
+      </h1>
       <section id="books">
-        <h2>A Song of Ice and Fire universe</h2>
+        <h2 class="header-font secondary-header">
+          A Song of Ice and Fire universe
+        </h2>
         <ul>
           <li>
             A Song of Ice and Fire series:
@@ -44,7 +52,7 @@
         </ul>
       </section>
       <section id="covers">
-        <h2>First Edition Covers</h2>
+        <h2 class="header-font">First Edition Covers</h2>
         <img
           src="https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg"
           alt="A Game of Thrones - First Edition Cover"
@@ -65,7 +73,9 @@
         />
       </section>
       <section id="table">
-        <h2>POV Character with the Most Chapters in Each Book</h2>
+        <h2 class="header-font secondary-header">
+          POV Character with the Most Chapters in Each Book
+        </h2>
         <table>
           <thead>
             <tr>
@@ -122,13 +132,14 @@
               <td>13</td>
               <td>42</td>
             </tr>
-            <tfoot>
-              <tr>
-                <td colspan="6"><b>Total POV Chapters (Displayed)</b></td>
-                <td><b>147</b></td>
-              </tr>
-            </tfoot>
           </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6"><b>Total POV Chapters (Displayed)</b></td>
+              <td><b>147</b></td>
+            </tr>
+          </tfoot>
+        </table>
       </section>
     </main>
   </body>

@@ -1,1 +1,43 @@
-/* Add your CSS code here  */
+:root {
+  --ice-blue-juvie: #8fbcd4;
+  --gothic-gray-blue: #6f8796;
+  --dark-slate-infinity: #1f2a33;
+}
+
+.header-font {
+  font-family: "Cinzel", serif;
+}
+
+.primary-header {
+  color: var(--gothic-gray-blue);
+}
+
+.nav {
+  background-color: var(--dark-slate-infinity);
+  font-family: "Cinzel", serif;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-link {
+  color: var(--ice-blue-juvie);
+  text-decoration: none;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 6px;
+  border: 1px solid black;
+}
