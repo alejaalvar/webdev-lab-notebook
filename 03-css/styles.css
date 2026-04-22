@@ -82,3 +82,106 @@ main {
 .book-header {
   background-color: var(--very-light-slate);
 }
+
+/* Exercise 02 - Form */
+
+.form-body {
+  background-color: var(--Midnight-Blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.form-main {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px 60px;
+  width: 580px;
+}
+
+.form-main h1 {
+  color: var(--Midnight-Blue);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.form-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-main form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-main form > div:last-of-type {
+  gap: 16px;
+}
+
+.form-main form > div:last-of-type input {
+  flex: 1;
+}
+
+.form-main label {
+  color: #2a2a4a;
+}
+
+.form-main input[type="text"],
+.form-main input[type="number"] {
+  width: 220px;
+  padding: 12px;
+  border: 1px solid #d0d4d8;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.form-main fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-main legend {
+  font-weight: 600;
+  color: #2a2a4a;
+  margin-bottom: 6px;
+}
+
+.form-main input[type="submit"] {
+  background-color: var(--Midnight-Blue);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-main input[type="reset"] {
+  background-color: #e0e0e0;
+  color: #2a2a4a;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-main p {
+  font-size: 0.9em;
+  color: #2a2a4a;
+  margin-top: 10px;
+}
+
+.form-main a {
+  color: #3a3aaa;
+}
