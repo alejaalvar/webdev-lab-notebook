@@ -7,48 +7,41 @@
     <title>CSS Exercise 02 - Form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-              <h1>Roth IRA Calculator</h1>
+  <body class="form-body">
+    <main class="form-main">
+      <h1>Roth IRA Calculator</h1>
       <form action="/submitform">
         <div>
           <label for="balance">Balance ($)</label>
           <input type="text" name="balance" id="balance" />
         </div>
-        <br />
         <div>
-          <label for="annual">Annual Contribution ($)</label> <br />
+          <label for="annual">Annual contribution ($)</label>
           <input type="text" name="annual" id="annual" />
         </div>
-        <br />
         <fieldset>
-          <legend>Maximize contributions?</legend>
+          <legend>Maximize contribution?</legend>
           <input type="radio" name="maximize" id="yes" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" name="maximize" id="no" value="no" />
-          <label for="no">no</label>
+          <label for="no">No</label>
         </fieldset>
-        <br />
         <div>
-          <label for="rate">Expected rate of return (%)</label><br />
+          <label for="rate">Expected rate of return (%)</label>
           <input type="number" name="rate" id="rate" />
         </div>
-        <br />
         <div>
-          <label for="current">Current Age</label><br />
+          <label for="current">Current age</label>
           <input type="number" name="current" id="current" />
         </div>
-        <br />
         <div>
-          <label for="retire">Retirement Age</label><br />
+          <label for="retire">Retirement age</label>
           <input type="number" name="retire" id="retire" />
         </div>
-        <br />
         <div>
-          <label for="tax">Marginal tax rate (%)</label><br />
+          <label for="tax">Marginal tax rate (%)</label>
           <input type="number" name="tax" id="tax" />
         </div>
-        <br />
         <div>
           <input type="submit" value="Calculate" />
           <input type="reset" value="Reset" />
