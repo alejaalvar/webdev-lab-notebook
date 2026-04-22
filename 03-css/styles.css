@@ -20,7 +20,7 @@ main {
 }
 
 .secondary-header {
-  display: inline-block;
+  display: block;
   text-align: left;
   border-bottom: 1px solid #d0d0d0;
   padding-bottom: 5px;
@@ -49,6 +49,11 @@ main {
 .nav-link {
   color: var(--ice-blue-juvie);
   text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 .cover-container {
