@@ -52,43 +52,45 @@
         </ul>
       </section>
       <section id="covers">
-        <h2 class="header-font">First Edition Covers</h2>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg"
-          alt="A Game of Thrones - First Edition Cover"
-          width="190"
-          height="300"
-        />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg"
-          alt="A Clash of Kings - First Edition Cover"
-          width="190"
-          height="300"
-        />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/2/24/AStormOfSwords.jpg"
-          alt="A Storm of Swords - First Edition Cover"
-          width="190"
-          height="300"
-        />
+        <h2 class="header-font secondary-header">First Edition Covers</h2>
+        <div class="cover-container">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg"
+            alt="A Game of Thrones - First Edition Cover"
+            width="190"
+            height="300"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg"
+            alt="A Clash of Kings - First Edition Cover"
+            width="190"
+            height="300"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/2/24/AStormOfSwords.jpg"
+            alt="A Storm of Swords - First Edition Cover"
+            width="190"
+            height="300"
+          />
+        </div>
       </section>
       <section id="table">
         <h2 class="header-font secondary-header">
           POV Character with the Most Chapters in Each Book
         </h2>
-        <table>
+        <table class="book-table">
           <thead>
             <tr>
-              <th rowspan="2">POV Character</th>
-              <th colspan="5">Books</th>
-              <th rowspan="2">Total Chapters</th>
+              <th class="book-header" rowspan="2">POV Character</th>
+              <th class="book-header" colspan="5">Books</th>
+              <th class="book-header" rowspan="2">Total Chapters</th>
             </tr>
             <tr>
-              <th>A Game of Thrones</th>
-              <th>A Clash of Kings</th>
-              <th>A Storm of Swords</th>
-              <th>A Feast for Crows</th>
-              <th>A Dance with Dragons</th>
+              <th class="book-header">A Game of Thrones</th>
+              <th class="book-header">A Clash of Kings</th>
+              <th class="book-header">A Storm of Swords</th>
+              <th class="book-header">A Feast for Crows</th>
+              <th class="book-header">A Dance with Dragons</th>
             </tr>
           </thead>
           <tbody>
@@ -99,13 +101,13 @@
               <td>15</td>
             </tr>
             <tr>
-              <td>Tyrion Lannister</td>
-              <td>9</td>
-              <td>15</td>
-              <td>11</td>
-              <td>n/a</td>
-              <td>12</td>
-              <td>47</td>
+              <td class="book-header">Tyrion Lannister</td>
+              <td class="book-header">9</td>
+              <td class="book-header">15</td>
+              <td class="book-header">11</td>
+              <td class="book-header">n/a</td>
+              <td class="book-header">12</td>
+              <td class="book-header">47</td>
             </tr>
             <tr>
               <td>Arya Stark</td>
@@ -117,11 +119,11 @@
               <td>33</td>
             </tr>
             <tr>
-              <td>Cersei Lannister</td>
-              <td colspan="3">n/a</td>
-              <td>10</td>
-              <td>n/a</td>
-              <td>10</td>
+              <td class="book-header">Cersei Lannister</td>
+              <td class="book-header" colspan="3">n/a</td>
+              <td class="book-header">10</td>
+              <td class="book-header">n/a</td>
+              <td class="book-header">10</td>
             </tr>
             <tr>
               <td>Jon Snow</td>
@@ -135,8 +137,10 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="6"><b>Total POV Chapters (Displayed)</b></td>
-              <td><b>147</b></td>
+              <td class="book-header" colspan="6">
+                <b>Total POV Chapters (Displayed)</b>
+              </td>
+              <td class="book-header"><b>147</b></td>
             </tr>
           </tfoot>
         </table>

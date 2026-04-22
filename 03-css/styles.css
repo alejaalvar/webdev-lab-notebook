@@ -2,6 +2,12 @@
   --ice-blue-juvie: #8fbcd4;
   --gothic-gray-blue: #6f8796;
   --dark-slate-infinity: #1f2a33;
+  --very-light-slate: #f5f7fa;
+  --very-light-blue: #c8d0d8;
+}
+
+main {
+  padding: 0 40px;
 }
 
 .header-font {
@@ -9,7 +15,15 @@
 }
 
 .primary-header {
+  text-align: center;
   color: var(--gothic-gray-blue);
+}
+
+.secondary-header {
+  display: inline-block;
+  text-align: left;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 5px;
 }
 
 .nav {
@@ -17,6 +31,11 @@
   font-family: "Cinzel", serif;
   font-size: 1.2em;
   padding: 10px;
+}
+
+.nav-link:hover {
+  color: var(--dark-slate-infinity);
+  background-color: var(--ice-blue-juvie);
 }
 
 .nav-list {
@@ -32,12 +51,23 @@
   text-decoration: none;
 }
 
-table {
-  border: 1px solid black;
+.cover-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.book-table {
+  border: 1px solid var(--very-light-blue);
   border-collapse: collapse;
 }
-table td,
-table th {
+.book-table td,
+.book-table th {
+  text-align: center;
   padding: 6px;
-  border: 1px solid black;
+  border: 1px solid var(--very-light-blue);
+}
+
+.book-header {
+  background-color: var(--very-light-slate);
 }
