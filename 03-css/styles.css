@@ -62,6 +62,11 @@ main {
   gap: 20px;
 }
 
+.cover-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
 .book-table {
   border: 1px solid var(--very-light-blue);
   border-collapse: collapse;
