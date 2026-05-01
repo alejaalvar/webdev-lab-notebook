@@ -152,3 +152,65 @@ h1 {
 }
 
 /* Exercise 04 - CSS Grid Areas */
+.header {
+  grid-area: header;
+}
+
+.article {
+  grid-area: article;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.section {
+  grid-area: section;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-area-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  gap: 0.5rem;
+  grid-template-areas:
+    "header"
+    "article"
+    "article"
+    "article"
+    "section"
+    "section"
+    "section"
+    "aside"
+    "footer";
+}
+
+@media (min-width: 576px) {
+  .grid-area-container {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+    gap: 0.5rem;
+    grid-template-areas:
+      "header   header"
+      "article  aside"
+      "section  section"
+      "footer   footer";
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-area-container {
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 3fr 3fr 1fr;
+    gap: 0.5rem;
+    grid-template-areas:
+      "header   header    header"
+      "aside    article   article"
+      "section  section   section"
+      "footer   footer    footer";
+  }
+}
