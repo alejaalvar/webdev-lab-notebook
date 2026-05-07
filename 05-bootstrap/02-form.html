@@ -12,6 +12,78 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body class="bg-light">
-    <h1 class="text-center m-4 fs-2">Roth IRA Calculator</h1>
+    <main class="container">
+      <h1 class="text-center m-4 fs-2">Roth IRA Calculator</h1>
+      <form action="/submitform">
+        <div class="form-group">
+          <label for="balance">Balance ($)</label>
+          <input class="form-control" type="text" name="balance" id="balance" />
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="annual">Annual Contribution ($)</label> <br />
+          <input class="form-control" type="text" name="annual" id="annual" />
+        </div>
+        <br />
+        <fieldset>
+          <legend>Maximize contributions?</legend>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="maximize"
+              id="yes"
+              value="yes"
+            />
+            <label class="for-check-label" for="yes">Yes</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="maximize"
+              id="no"
+              value="no"
+            />
+            <label class="form-check-label" for="no">no</label>
+          </div>
+        </fieldset>
+        <br />
+        <div class="form-group">
+          <label for="rate">Expected rate of return (%)</label><br />
+          <input class="form-control" type="number" name="rate" id="rate" />
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="current">Current Age</label><br />
+          <input
+            class="form-control"
+            type="number"
+            name="current"
+            id="current"
+          />
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="retire">Retirement Age</label><br />
+          <input class="form-control" type="number" name="retire" id="retire" />
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="tax">Marginal tax rate (%)</label><br />
+          <input class="form-control" type="number" name="tax" id="tax" />
+        </div>
+        <br />
+        <div class="text-center">
+          <input class="btn btn-primary" type="submit" value="Calculate" />
+          <input class="btn btn-outline-secondary" type="reset" value="Reset" />
+        </div>
+      </form>
+      <footer class="text-center mt-auto footer"></footer>
+      <p>
+        This exercise is a simplified version of the Roth IRA Calculator at
+        <a href="https://www.calculator.net">Calculator.net</a>
+      </p>
+    </main>
   </body>
 </html>
