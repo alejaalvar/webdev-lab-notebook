@@ -10,7 +10,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="bg-light">
+  <body class="bg-light d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand ps-4" href="#">Simple Game Showcase</a>
@@ -37,18 +37,19 @@
       </nav>
       <h1 class="text-center m-4 text-wrap">Simple Game Showcase</h1>
     </header>
-    <br />
-    <main class="main-area">
-      <div class="row g-3">
+    <main class="container main-area">
+      <div class="row g-3 mb-4">
         <div class="col-12 col-md-4">
-          <section id="dino" class="card text-center">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Chromium_T-Rex-error-offline.svg/250px-Chromium_T-Rex-error-offline.svg.png"
-              alt="Dino Game on Chrome"
-              class="card-img-top img-thumbnail"
-            />
+          <section id="dino" class="card text-center h-100">
+            <div class="ratio ratio-4x3">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Chromium_T-Rex-error-offline.svg/250px-Chromium_T-Rex-error-offline.svg.png"
+                alt="Dino Game on Chrome"
+                class="card-img-top object-fit-contain"
+              />
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Chrome Dino Game</h5>
+              <h2 class="card-title fw-bolder">Chrome Dino Game</h2>
               <p class="card-text">
                 The Chrome Dino Game was released in 2014 by Google. It appears
                 when users lose internet connection in the Chrome browser.
@@ -64,16 +65,17 @@
             </div>
           </section>
         </div>
-        <br />
         <div class="col-12 col-md-4">
-          <section id="goose" class="card text-center">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/b/b2/Untitled_Goose_Game_Cover_art.jpg"
-              alt="Untitled Goose Game cover art"
-              class="card-img-top img-thumbnail"
-            />
+          <section id="goose" class="card text-center h-100">
+            <div class="ratio ratio-4x3">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/b/b2/Untitled_Goose_Game_Cover_art.jpg"
+                alt="Untitled Goose Game cover art"
+                class="card-img-top object-fit-contain"
+              />
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Untitled Goose Game</h5>
+              <h2 class="card-title fw-bolder">Untitled Goose Game</h2>
               <p class="card-text">
                 Untitled Goose Game was released in 2019 by House House. It is a
                 puzzle-stealth game where players control a mischievous goose
@@ -88,16 +90,17 @@
             </div>
           </section>
         </div>
-        <br />
         <div class="col-12 col-md-4">
-          <section id="flappy" class="card text-center">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/0/0a/Flappy_Bird_icon.png"
-              alt="Flappy Bird game icon"
-              class="card-img-top img-thumbnail"
-            />
+          <section id="flappy" class="card text-center h-100">
+            <div class="ratio ratio-4x3">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/0/0a/Flappy_Bird_icon.png"
+                alt="Flappy Bird game icon"
+                class="card-img-top object-fit-contain"
+              />
+            </div>
             <div class="card-body">
-              <h5>Flappy Bird</h5>
+              <h2 class="card-title fw-bolder">Flappy Bird</h2>
               <p class="card-text">
                 Flappy Bird was released in 2013 by Dong Nguyen. It is a mobile
                 game where players tap the screen to keep a bird flying between
