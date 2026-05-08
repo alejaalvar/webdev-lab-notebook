@@ -11,10 +11,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="bg-light">
-    <main class="container">
+  <body class="bg-subtle d-flex align-items-center bg-light min-vh-100">
+    <main
+      class="bg-body shadow-sm border border-light-subtle rounded w-75 mx-auto"
+    >
       <h1 class="text-center m-4 fs-2">Roth IRA Calculator</h1>
-      <form action="/submitform">
+      <form class="px-3" action="/submitform">
         <div class="form-group">
           <label for="balance">Balance ($)</label>
           <input class="form-control" type="text" name="balance" id="balance" />
@@ -79,11 +81,12 @@
           <input class="btn btn-outline-secondary" type="reset" value="Reset" />
         </div>
       </form>
-      <footer class="text-center mt-auto footer"></footer>
-      <p>
-        This exercise is a simplified version of the Roth IRA Calculator at
-        <a href="https://www.calculator.net">Calculator.net</a>
-      </p>
+      <footer class="text-center mt-auto footer pt-3 px-3">
+        <p>
+          This exercise is a simplified version of the Roth IRA Calculator at
+          <a href="https://www.calculator.net">Calculator.net</a>
+        </p>
+      </footer>
     </main>
   </body>
 </html>
