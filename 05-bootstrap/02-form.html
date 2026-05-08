@@ -13,65 +13,111 @@
   </head>
   <body class="bg-subtle d-flex align-items-center bg-light min-vh-100">
     <main
-      class="bg-body shadow-sm border border-light-subtle rounded w-75 mx-auto"
+      class="bg-body shadow-sm border border-light-subtle rounded w-75 mx-auto my-5"
     >
       <h1 class="text-center m-4 fs-2">Roth IRA Calculator</h1>
       <form class="p-3" action="/submitform">
-        <div class="form-group mb-3">
-          <label for="balance">Balance ($)</label>
-          <input class="form-control" type="text" name="balance" id="balance" />
-        </div>
-        <div class="form-group mb-3">
-          <label for="annual">Annual Contribution ($)</label>
-          <input class="form-control" type="text" name="annual" id="annual" />
-        </div>
-        <fieldset class="mb-3">
-          <legend>Maximize contributions?</legend>
-          <div class="form-check">
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="balance"
+            >Balance ($)</label
+          >
+          <div class="col-12 col-md-7">
             <input
-              class="form-check-input"
-              type="radio"
-              name="maximize"
-              id="yes"
-              value="yes"
+              class="form-control"
+              type="text"
+              name="balance"
+              id="balance"
             />
-            <label class="form-check-label" for="yes">Yes</label>
           </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="maximize"
-              id="no"
-              value="no"
-            />
-            <label class="form-check-label" for="no">No</label>
+        </div>
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="annual"
+            >Annual Contribution ($)</label
+          >
+          <div class="col-12 col-md-7">
+            <input class="form-control" type="text" name="annual" id="annual" />
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-12 col-md-5 col-form-label">
+            Maximize contributions?
+          </legend>
+          <div class="col-12 col-md-7">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="maximize"
+                id="yes"
+                value="yes"
+              />
+              <label class="form-check-label" for="yes">Yes</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="maximize"
+                id="no"
+                value="no"
+              />
+              <label class="form-check-label" for="no">No</label>
+            </div>
           </div>
         </fieldset>
-        <div class="form-group mb-3">
-          <label for="rate">Expected return (%)</label>
-          <input class="form-control" type="number" name="rate" id="rate" />
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="rate"
+            >Expected return (%)</label
+          >
+          <div class="col-12 col-md-7">
+            <input class="form-control" type="number" name="rate" id="rate" />
+          </div>
         </div>
-        <div class="form-group mb-3">
-          <label for="current">Current age</label>
-          <input
-            class="form-control"
-            type="number"
-            name="current"
-            id="current"
-          />
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="current"
+            >Current age</label
+          >
+          <div class="col-12 col-md-7">
+            <input
+              class="form-control"
+              type="number"
+              name="current"
+              id="current"
+            />
+          </div>
         </div>
-        <div class="form-group mb-3">
-          <label for="retire">Retirement age</label>
-          <input class="form-control" type="number" name="retire" id="retire" />
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="retire"
+            >Retirement age</label
+          >
+          <div class="col-12 col-md-7">
+            <input
+              class="form-control"
+              type="number"
+              name="retire"
+              id="retire"
+            />
+          </div>
         </div>
-        <div class="form-group mb-3">
-          <label for="tax">Tax rate (%)</label>
-          <input class="form-control" type="number" name="tax" id="tax" />
+        <div class="row form-group mb-3">
+          <label class="col-12 col-md-5 col-form-label" for="tax"
+            >Tax rate (%)</label
+          >
+          <div class="col-12 col-md-7">
+            <input class="form-control" type="number" name="tax" id="tax" />
+          </div>
         </div>
         <div class="d-flex gap-2">
-          <input class="btn btn-primary flex-fill" type="submit" value="Calculate" />
-          <input class="btn btn-outline-secondary flex-fill" type="reset" value="Reset" />
+          <input
+            class="btn btn-primary flex-fill"
+            type="submit"
+            value="Calculate"
+          />
+          <input
+            class="btn btn-outline-secondary flex-fill"
+            type="reset"
+            value="Reset"
+          />
         </div>
       </form>
       <footer class="text-center mt-auto footer pt-3 px-3">
