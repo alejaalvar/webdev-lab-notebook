@@ -80,4 +80,42 @@ const fetchData = async function () {
   }
 };
 
-fetchData();
+const fetchDataAll = async function () {
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=25&offset=0";
+
+  const pokeList = document.querySelector(".poke-list");
+
+  try {
+    const response = await fetch(url);
+    const bodyData = await response.json();
+
+    const pokemonList = bodyData.results;
+
+    console.log(bodyData.results);
+    const promises = pokemonList.map((pokemon) => {
+      return fetch(pokemon.url)
+        .then((res) => res.json())
+        .catch((error) => console.error("an error occurred"));
+    });
+
+    const pokemonData = await Promise.all(promises);
+
+    console.log(pokemonData);
+    pokemonData.forEach((pokemon) => {
+      const elem = createNewElement(pokemon);
+      pokeList.append(elem);
+    });
+  } catch (error) {
+    console.error("Error fetch data form the PokeAPI", error);
+    const errorElement = document.createElement("p");
+    errorElement.textContent("Error fetch data from the PokeAPI");
+    errorElement.setAttribute("class", "errorMessage");
+    pokeList.append(errorElement);
+  } finally {
+    console.log("executes either way");
+    const loading = document.querySelector(".loading-container");
+    loading.setAttribute("class", "display-none");
+  }
+};
+
+fetchDataAll();
