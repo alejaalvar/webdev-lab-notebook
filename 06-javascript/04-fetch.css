@@ -27,8 +27,17 @@ body {
   color: var(--main-light-color);
 }
 
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
 .poke-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 

@@ -33,7 +33,7 @@ const createNewElement = function (data) {
 
   h2.textContent = pokemonName;
   img.src = pokemonImage;
-  img.alt = `image of ${pokemonName}`;
+  img.alt = `${pokemonName}`;
   img.width = "240";
   img.height = "240";
 
