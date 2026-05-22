@@ -20,14 +20,34 @@ const pokemonColors = {
 };
 
 const createNewElement = function (data) {
+  const { name: pokemonName, types } = data;
+  const { front_default: pokemonImage } =
+    data.sprites.other["official-artwork"];
+
+  const pokemonTypesArr = types.map((item) => item.type.name);
+
   const card = document.createElement("div");
   const h2 = document.createElement("h2");
   const img = document.createElement("img");
   const typesDiv = document.createElement("div");
 
-  h2.textContent = data.name;
+  h2.textContent = pokemonName;
+  img.src = pokemonImage;
+  img.alt = `image of ${pokemonName}`;
+  img.width = "240";
+  img.height = "240";
 
-  card.append(h2, img, typesDiv);
+  card.append(h2);
+  card.append(img);
+
+  pokemonTypesArr.map((item) => {
+    const span = document.createElement("span");
+    span.textContent = item;
+    typesDiv.append(span);
+  });
+
+  card.append(typesDiv);
+
   return card;
 };
 
