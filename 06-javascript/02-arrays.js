@@ -51,7 +51,6 @@ console.log(forEachPokemon());
 // #20 Raticate - Normal
 console.groupEnd();
 
-// Add your code here for: filterPokemons
 const filterPokemons = function (pokemonType) {
   const filteredPokemons = pokemons
     .filter((item) => item.types.includes(pokemonType))
@@ -71,6 +70,24 @@ console.log(filterPokemons("Poison"));
 console.groupEnd();
 
 // Add your code here for: searchPokemons
+const searchPokemons = function (searchQuery) {
+  const query = searchQuery.toLowerCase();
+  const resultsArray = pokemons.filter((item) => {
+    // We use includes because it makes the search more forgiving
+    const searchName = item.name.toLowerCase().includes(query);
+    const searchType = item.types.some((type) =>
+      type.toLowerCase().includes(query),
+    );
+
+    return searchName || searchType;
+  });
+
+  if (resultsArray.length === 0) {
+    return `No Pokemon with that name or type were found`;
+  }
+
+  return resultsArray;
+};
 
 console.group("=========== searchPokemons =========== ");
 console.log(searchPokemons("Wartortle"));
@@ -88,10 +105,22 @@ console.log(searchPokemons("bug"));
 // ]
 console.groupEnd();
 
-// Add your code here for: reducePokemons
+const reducePokemons = function () {
+  const result = pokemons.reduce((acc, pokemon) => {
+    pokemon.types.forEach((type) => {
+      if (acc[type]) {
+        acc[type]++;
+      } else {
+        acc[type] = 1;
+      }
+    });
+    return acc;
+  }, {});
+  return result;
+};
 
 console.group("=========== reducePokemons =========== ");
-console.log(reducePokemons);
+console.log(reducePokemons());
 // {
 //   Grass: 3,
 //   Poison: 6,
