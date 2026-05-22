@@ -52,6 +52,14 @@ console.log(forEachPokemon());
 console.groupEnd();
 
 // Add your code here for: filterPokemons
+const filterPokemons = function (pokemonType) {
+  const filteredPokemons = pokemons
+    .filter((item) => item.types.includes(pokemonType))
+    .map((item) => item.name)
+    .sort();
+
+  return filteredPokemons;
+};
 
 console.group("=========== filterPokemons =========== ");
 console.log(filterPokemons("Fire"));
