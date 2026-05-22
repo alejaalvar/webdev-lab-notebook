@@ -27,14 +27,16 @@ const sortPokemons = function logSortedPokemons(sortType) {
   switch (sortType) {
     case `numerically, in ascending order`:
       // We are passing in a comparator func to specify **how** we sort
-      sortedPokemons.sort((a, b) => a - b); // a-b is an **implicit** return
+      sortedPokemons.sort((a, b) => a.id - b.id); // a-b is an **implicit** return
       break;
     case `numerically, in descending order`:
-      sortedPokemons.sort((a, b) => b - a).reverse();
+      sortedPokemons.sort((a, b) => b.id - a.id);
       break;
     case `alphabetically, in ascending order`:
+      sortedPokemons.sort((a, b) => a.name.localeCompare(b.name)); // special comparator for locale aware string comparisons
       break;
-    case `numerically, in ascending order`:
+    case `alphabetically, in descending order`:
+      sortedPokemons.sort((a, b) => b.name.localeCompare(a.name));
       break;
   }
 
@@ -42,6 +44,6 @@ const sortPokemons = function logSortedPokemons(sortType) {
 };
 
 //console.log(sortPokemons("numerically, in ascending order"));
-console.log(sortPokemons("numerically, in descending order"));
+//console.log(sortPokemons("numerically, in descending order"));
 //console.log(sortPokemons("alphabetically, in ascending order"));
-//console.log(sortPokemons("alphabetically, in descending order"));
+console.log(sortPokemons("alphabetically, in descending order"));
