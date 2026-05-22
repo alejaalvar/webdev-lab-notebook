@@ -37,12 +37,16 @@ const createNewElement = function (data) {
   img.width = "240";
   img.height = "240";
 
+  card.setAttribute("class", "pokemonCard");
+
   card.append(h2);
   card.append(img);
 
   pokemonTypesArr.map((item) => {
     const span = document.createElement("span");
     span.textContent = item;
+    span.style.backgroundColor = pokemonColors[item];
+    span.setAttribute("class", "pokemonType");
     typesDiv.append(span);
   });
 
@@ -65,8 +69,14 @@ const fetchData = async function () {
     pokeList.append(elem);
   } catch (error) {
     console.error("Error fetch data form the PokeAPI", error);
+    const errorElement = document.createElement("p");
+    errorElement.textContent("Error fetch data from the PokeAPI");
+    errorElement.setAttribute("class", "errorMessage");
+    pokeList.append(errorElement);
   } finally {
     console.log("executes either way");
+    const loading = document.querySelector(".loading-container");
+    loading.setAttribute("class", "display-none");
   }
 };
 

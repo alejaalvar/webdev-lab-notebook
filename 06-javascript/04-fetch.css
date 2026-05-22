@@ -9,6 +9,42 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--main-color);
   background-color: var(--bg-color);
+  margin: 0;
 }
 
-/* Add your code here */
+.header {
+  background-color: var(--pokemon-yellow);
+  padding: 1rem;
+}
+
+.container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.loading,
+.errorMessage {
+  color: var(--main-light-color);
+}
+
+.poke-list {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemonCard {
+  width: 300px;
+  margin: 0.5rem;
+  padding: 1rem 0.5rem 2rem 0.5rem;
+  text-align: center;
+  background-color: var(--main-light-color);
+}
+
+.pokemonType {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.display-none {
+  display: none;
+}

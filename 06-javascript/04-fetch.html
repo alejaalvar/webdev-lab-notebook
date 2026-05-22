@@ -9,12 +9,19 @@
   </head>
   <body>
     <main>
-      <header class="navbar">
+      <header class="header">
         <h1 class="brand-logo">Pokedex</h1>
       </header>
       <section class="container">
-        <p>Loading...</p>
-        <!-- Use the loader.gif provided in the images/ folder -->
+        <div class="loading-container">
+          <img
+            src="../images/loader.gif"
+            alt="loader gif while the data loads"
+            width="60"
+            height="60"
+          />
+          <p class="loading">Loading...</p>
+        </div>
         <div class="poke-list"></div>
       </section>
     </main>
