@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
     file.serveFile("/form.html", 200, {}, req, res);
   }
   // form submission
-  else if (req.method === "POST" && req.url === "") {
+  else if (req.method === "POST" && req.url === "/formExerciseSubmit") {
     let body = ""; // we need mutability since we receive data from the body
 
     req.on("data", (chunk) => {
