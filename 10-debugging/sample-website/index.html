@@ -156,7 +156,7 @@
               neighbouring farmer and cat-fancier.
             </p>
           </div>
-          <a class="more-info-button">More Info</a>
+          <button class="more-info-button">More Info</button>
         </div>
         <!-- i think this is the next element sibling? -->
         <div class="popup-section-container">
@@ -204,7 +204,7 @@
               deafness.
             </p>
           </div>
-          <a class="more-info-button">More Info</a>
+          <button class="more-info-button">More Info</button>
         </div>
         <div class="popup-section-container">
           <div class="popup-section">
@@ -245,7 +245,7 @@
               considerably more than kittens of more common breeds
             </p>
           </div>
-          <a class="more-info-button">More Info</a>
+          <button class="more-info-button">More Info</button>
         </div>
         <div class="popup-section-container">
           <div class="popup-section">
@@ -378,7 +378,7 @@
       <h1>Cat Facts</h1>
       <div class="loading-container"></div>
       <div id="cat-facts-list"></div>
-      <a class="reload-cat-facts">Load New Cats Facts</a>
+      <button class="reload-cat-facts">Load New Cats Facts</button>
     </div>
 
     <div class="dark-background-container">
@@ -388,7 +388,7 @@
           class="space-between-distributed-row-container vertically-stacked-sm-screen-container"
         >
           <p class="label-input-group form-element-container">
-            <span class="form-label">Name</span>
+            <label class="form-label">Name</label>
             <input
               aria-label="name"
               class="form-input-box"
@@ -398,7 +398,7 @@
             />
           </p>
           <p class="label-input-group form-element-container">
-            <span class="form-label">Username</span>
+            <label class="form-label">Username</label>
             <input
               aria-label="username"
               class="form-input-box"
@@ -412,7 +412,7 @@
           class="space-between-distributed-row-container vertically-stacked-sm-screen-container"
         >
           <p class="label-input-group form-element-container">
-            <span class="form-label">Email</span>
+            <label class="form-label">Email</label>
             <input
               aria-label="email"
               class="form-input-box"
@@ -422,7 +422,7 @@
             />
           </p>
           <p class="label-input-group form-element-container">
-            <span class="form-label">Phone Number</span>
+            <label class="form-label">Phone Number</label>
             <input
               aria-label="phone"
               class="form-input-box"
@@ -432,8 +432,10 @@
             />
           </p>
         </div>
-        <div class="form-fieldset form-element-container">
-          <p class="form-label">What breeds would you like to learn?</p>
+        <fieldset class="form-fieldset form-element-container">
+          <legend class="form-label">
+            What breeds would you like to learn?
+          </legend>
           <div>
             <input type="checkbox" id="siamese" name="breed1" value="siamese" />
             <label for="siamese">Siamese Cat</label>
@@ -487,7 +489,7 @@
             />
             <label for="american-shorthair">American Shorthair</label>
           </div>
-        </div>
+        </fieldset>
         <label class="form-label" for="message"
           >Feel free to leave a message to us</label
         >
