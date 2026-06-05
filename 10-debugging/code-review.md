@@ -274,3 +274,35 @@ document.querySelectorAll("button[data-target]").forEach((button) => {
   });
 });
 ```
+
+### Issue #8: Brittle DOM traversal and debug logging in close popup button handler
+
+The close popup button handler had one main problem. It located the popup container by walking up exactly three `.parentElement` levels: `event.currentTarget.parentElement.parentElement.parentElement`. Like the More Info button traversal, this creates a hidden structural dependency — the code silently breaks if the nesting depth between the close button and `.popup-section-container` ever changes.
+
+The fix replaces the chained `.parentElement` calls with `closest(".popup-section-container")`, which searches up the ancestor chain for the first element matching the selector regardless of depth. No HTML changes were needed since the close button is already inside the popup it needs to close.
+
+Initial code:
+
+```js
+for (const closePopupButton of closePopupButtons) {
+  closePopupButton.addEventListener("click", (event) => {
+    console.log(event.target);
+    const popupSection =
+      event.currentTarget.parentElement.parentElement.parentElement;
+    popupSection.style.display = "none";
+  });
+}
+```
+
+Updated code:
+
+```js
+for (const closePopupButton of closePopupButtons) {
+  closePopupButton.addEventListener("click", (event) => {
+    const popupSection = event.currentTarget.closest(
+      ".popup-section-container",
+    );
+    popupSection.style.display = "none";
+  });
+}
+```

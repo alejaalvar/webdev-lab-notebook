@@ -27,9 +27,7 @@ of the DOM
 */
 for (const closePopupButton of closePopupButtons) {
   closePopupButton.addEventListener("click", (event) => {
-    console.log(event.target); // is it an issue to console.log the internal structure of the dom in production?
-    const popupSection =
-      event.currentTarget.parentElement.parentElement.parentElement;
+    const popupSection = event.currentTarget.closest(".popup-section-container");
     popupSection.style.display = "none";
   });
 }
