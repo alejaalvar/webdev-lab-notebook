@@ -3,9 +3,11 @@ const moreInfoButtons = document.querySelectorAll(".more-info-button"); // the m
 /*
 This is essentially looping through each of those moreInfo buttons, adding a click event listener, 
 going to the parent, and then going to the sibling, which the next sibling is the element with the 
-class value popup-section-container, and then setting its display attribute to block (it starts off as ....)
+class value popup-section-container, and then setting its display attribute to block
+(it starts off as none)
 
-Is it clunky to have the currentTarget.parentElement.nextElementSibling line of code? Is that one of the issues?
+This way of modifying the display property seems very fragile as it depends entirely on the structure
+of the DOM
 */
 for (const moreInfoButton of moreInfoButtons) {
   moreInfoButton.addEventListener("click", (event) => {
@@ -22,12 +24,15 @@ great-grandparent element, and then setting its display property back to none. S
 provided to the user is essentially when they open the page, the modal is invisble, when they click
 on the more info button, they can click on the x and then it will set the display back to none, hiding
 it again, allowing the user to toggle back and forth
+
+This way of modifying the display property seems very fragile as it depends entirely on the structure
+of the DOM
 */
 for (const closePopupButton of closePopupButtons) {
   closePopupButton.addEventListener("click", (event) => {
     console.log(event.target); // is it an issue to console.log the internal structure of the dom in production?
     const popupSection =
-      event.currentTarget.parentElement.parentElement.parentElement; // is this an issue? seems very clunky
+      event.currentTarget.parentElement.parentElement.parentElement;
     popupSection.style.display = "none";
   });
 }
