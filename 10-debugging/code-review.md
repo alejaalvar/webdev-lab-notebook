@@ -229,3 +229,48 @@ Updated code:
   ...
 </fieldset>
 ```
+
+### Issue #7: Brittle DOM traversal for More Info popup buttons
+
+The original code found each popup by navigating relative DOM positions from the clicked button: `event.currentTarget.parentElement.nextElementSibling`. This creates a hidden structural dependency — the JavaScript only works correctly as long as the HTML keeps a `.popup-section-container` as the immediate next sibling of every `.card`. Any change to the HTML layout (such as adding a wrapper element) would silently break the popups.
+
+The fix adds a `data-target` attribute to each More Info button pointing to the `id` of its corresponding popup container. The JavaScript then looks up the popup directly by ID, with no knowledge of where the two elements sit relative to each other in the DOM.
+
+Initial code (`index.html`):
+
+```html
+<button class="more-info-button">More Info</button>
+...
+<div class="popup-section-container"></div>
+```
+
+Initial code (`index.js`):
+
+```js
+for (const moreInfoButton of moreInfoButtons) {
+  moreInfoButton.addEventListener("click", (event) => {
+    const popupSection = event.currentTarget.parentElement.nextElementSibling;
+    popupSection.style.display = "block";
+  });
+}
+```
+
+Updated code (`index.html`):
+
+```html
+<button data-target="history-popup" class="more-info-button">More Info</button>
+...
+<div id="history-popup" class="popup-section-container"></div>
+```
+
+Updated code (`index.js`):
+
+```js
+document.querySelectorAll("button[data-target]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const popupSectionId = event.currentTarget.dataset.target;
+    const popupSection = document.getElementById(popupSectionId);
+    popupSection.style.display = "block";
+  });
+});
+```
