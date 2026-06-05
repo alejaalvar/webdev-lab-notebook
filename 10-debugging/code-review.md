@@ -36,26 +36,26 @@ Initial code:
 
 ```js
 const fetchCatFacts = async function () {
-  const catFactsList = document.getElementById('cat-facts-list');
+  const catFactsList = document.getElementById("cat-facts-list");
   catFactsList.replaceChildren();
 
   createLoadingContainer();
 
   try {
-    const response = await fetch('https://catfact.ninja/facts?limit=10');
+    const response = await fetch("https://catfact.ninja/facts?limit=10");
     const data = await response.json();
 
     data.data.forEach((element) => {
-      const catFactItem = document.createElement('p');
-      catFactItem.setAttribute('class', 'cat-fact-list-item');
+      const catFactItem = document.createElement("p");
+      catFactItem.setAttribute("class", "cat-fact-list-item");
       catFactItem.textContent = element.fact;
       catFactsList.append(catFactItem);
     });
   } catch (error) {
-    console.error('Error fetching cat facts:', error);
+    console.error("Error fetching cat facts:", error);
   } finally {
-    const loading = document.querySelector('.loading-container');
-    loading.setAttribute('class', 'display-none');
+    const loading = document.querySelector(".loading-container");
+    loading.setAttribute("class", "display-none");
   }
 };
 ```
@@ -89,4 +89,59 @@ const fetchCatFacts = async function () {
     loading.replaceChildren();
   }
 };
+```
+
+### Issue #3: form buttons outside of the form element
+
+The `<input type="submit">` and `<input type="reset">` buttons appear
+after the closing `</form>` tag. Buttons outside a form have no association with it --
+clicking Submit won't submit the form (assuming there was a backend), and clicking Reset
+won't reset the fields. This is a semantic and functional bug.
+
+The actual fix for the code was very simple: move the `<input>` tags inside the `<form>` element.
+
+Initial Code:
+
+```html
+
+
+      </form>
+      <div
+        class="form space-evenly-distributed-row-container form-buttons-container"
+      >
+        <input class="form-button" type="submit" value="submit" />
+        <input class="form-button" type="reset" value="reset" />
+      </div>
+    </div>
+
+    <footer class="footer">
+      Copyright Ⓒ 2023 Yiming Lin. All rights reserved.
+    </footer>
+  </body>
+</html>
+
+
+
+```
+
+Updated Code:
+
+```html
+
+        <!-- immediately following the closing textarea tag  -->
+
+        <div
+          class="form space-evenly-distributed-row-container form-buttons-container"
+        >
+          <input class="form-button" type="submit" value="submit" />
+          <input class="form-button" type="reset" value="reset" />
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer">
+      Copyright Ⓒ 2023 Yiming Lin. All rights reserved.
+    </footer>
+
+
 ```
