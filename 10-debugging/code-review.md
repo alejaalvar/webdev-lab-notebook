@@ -145,3 +145,87 @@ Updated Code:
 
 
 ```
+
+### Issue #4: `<a>` elements used for actions instead of `<button>`
+
+The "More Info" buttons in the History section and the "Load New Cat Facts" element were all `<a>` tags with no `href` attribute. Anchor elements are meant for navigation — they represent a hyperlink to another location. When an `<a>` has no `href`, it is not keyboard-focusable by default (no tab stop), which is an accessibility problem. Since these elements trigger JavaScript actions rather than navigate anywhere, the correct semantic element is `<button>`. This change was applied to all four occurrences.
+
+Initial code:
+
+```html
+<a class="more-info-button">More Info</a>
+```
+
+```html
+<a class="reload-cat-facts">Load New Cats Facts</a>
+```
+
+Updated code:
+
+```html
+<button class="more-info-button">More Info</button>
+```
+
+```html
+<button class="reload-cat-facts">Load New Cats Facts</button>
+```
+
+### Issue #5: `<span>` used instead of `<label>` for form field labels
+
+The form field labels for Name, Username, Email, and Phone Number were written as `<span class="form-label">` elements. A `<span>` is a generic inline container with no semantic meaning. The correct element is `<label>`, which programmatically associates the label text with its corresponding input control. Screen readers use this association to announce the label when a user focuses the input. The inputs had `aria-label` attributes as a fallback, but proper `<label>` elements are the semantic standard and should be preferred. This change was applied to all four field labels.
+
+Initial code:
+
+```html
+<span class="form-label">Name</span>
+<input
+  aria-label="name"
+  class="form-input-box"
+  type="text"
+  id="name"
+  name="name"
+/>
+```
+
+Updated code:
+
+```html
+<label class="form-label">Name</label>
+<input
+  aria-label="name"
+  class="form-input-box"
+  type="text"
+  id="name"
+  name="name"
+/>
+```
+
+### Issue #6: `<div>` used instead of `<fieldset>` and `<legend>` for checkbox group
+
+The group of breed checkboxes was wrapped in a `<div class="form-fieldset">` with a `<p>` as its heading. The correct semantic HTML for grouping related form controls is a `<fieldset>` element with a `<legend>`. Screen readers announce the `<legend>` text when a user focuses any control inside the group, giving context for what the group of checkboxes represents. Using a plain `<div>` and `<p>` provides no such association.
+
+Initial code:
+
+```html
+<div class="form-fieldset form-element-container">
+  <p class="form-label">What breeds would you like to learn?</p>
+  <div>
+    <input type="checkbox" id="siamese" name="breed1" value="siamese" />
+    <label for="siamese">Siamese Cat</label>
+  </div>
+  ...
+</div>
+```
+
+Updated code:
+
+```html
+<fieldset class="form-fieldset form-element-container">
+  <legend class="form-label">What breeds would you like to learn?</legend>
+  <div>
+    <input type="checkbox" id="siamese" name="breed1" value="siamese" />
+    <label for="siamese">Siamese Cat</label>
+  </div>
+  ...
+</fieldset>
+```
