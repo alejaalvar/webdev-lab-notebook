@@ -1,4 +1,5 @@
 const moreInfoButtons = document.querySelectorAll(".more-info-button"); // the more info buttons in the history section
+const closePopupButtons = document.querySelectorAll(".close-popup-button"); // the x buttons on the modal when you click more info
 
 /*
 This is essentially looping through each of those moreInfo buttons, adding a click event listener, 
@@ -15,8 +16,6 @@ for (const moreInfoButton of moreInfoButtons) {
     popupSection.style.display = "block";
   });
 }
-
-const closePopupButtons = document.querySelectorAll(".close-popup-button"); // the x buttons on the modal when you click more info
 
 /*
 This is essentially looping through the close buttons, adding a click event listener, going to the 
