@@ -1,6 +1,6 @@
 :root {
   --darker-blue: rgb(25, 20, 101, 1);
-  --darker-blue-transpaent: rgb(25, 20, 101, 0.7);
+  --darker-blue-transparent: rgb(25, 20, 101, 0.7);
   --dark-blue: rgba(33, 26, 144, 1);
   --blue: rgba(44, 21, 208, 1);
   --light-blue: rgb(190, 182, 249);
@@ -8,7 +8,7 @@
   --white: rgb(255, 255, 255);
   --transparent: rgba(0, 0, 0, 0);
   --light-gray: rgb(226, 226, 226);
-  --darker-blue-even-transpaent: rgb(25, 20, 101, 0.2);
+  --darker-blue-even-transparent: rgb(25, 20, 101, 0.2);
 }
 
 html {
