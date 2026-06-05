@@ -6,16 +6,14 @@ This is essentially looping through each of those moreInfo buttons, adding a cli
 going to the parent, and then going to the sibling, which the next sibling is the element with the 
 class value popup-section-container, and then setting its display attribute to block
 (it starts off as none)
-
-This way of modifying the display property seems very fragile as it depends entirely on the structure
-of the DOM
 */
-for (const moreInfoButton of moreInfoButtons) {
-  moreInfoButton.addEventListener("click", (event) => {
-    const popupSection = event.currentTarget.parentElement.nextElementSibling;
+document.querySelectorAll("button[data-target]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const popupSectionId = event.currentTarget.dataset.target;
+    const popupSection = document.getElementById(popupSectionId);
     popupSection.style.display = "block";
   });
-}
+});
 
 /*
 This is essentially looping through the close buttons, adding a click event listener, going to the 
