@@ -34,10 +34,6 @@ for (const closePopupButton of closePopupButtons) {
   });
 }
 
-/*
-This is the spinning loading icon that shows up on first visit
-and on subsequent reloads
-*/
 const createLoadingContainer = function () {
   const loadingContainer = document.querySelector(".loading-container");
   const loader = document.createElement("img");
@@ -45,16 +41,9 @@ const createLoadingContainer = function () {
   loader.alt = "loader gif while the data loads";
   loader.width = 60;
   loader.height = 60;
-  /*
-  this will cause loader images to accumulate
-  */
   loadingContainer.append(loader); // adds the child elem (img) to the loading container node in the dom
 };
 
-/*
-I believe we have an uncaught exception here? The load new cat facts functionality
-is not actually functional. We might be trying to do something on a null value
-*/
 const fetchCatFacts = async function () {
   const catFactsList = document.getElementById("cat-facts-list");
   catFactsList.replaceChildren();
@@ -80,7 +69,6 @@ const fetchCatFacts = async function () {
     console.error("Error fetching cat facts:", error);
   } finally {
     const loading = document.querySelector(".loading-container");
-    //loading.setAttribute("class", "display-none"); // this is the culprit for the null problem
     loading.classList.add("display-none"); // this will preserve the existing loading-container class
     loading.replaceChildren();
   }
